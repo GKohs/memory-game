@@ -11,6 +11,7 @@ Later commits are my own attempts to upgrade the idea.
 - prevent choosing already chosen cards
 
 # Possibilities
+- git tutorial to organize changes
 - replace alert with something better
 - upgrade the look
 - game menu?
