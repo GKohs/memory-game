@@ -99,10 +99,18 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('You found a match')
       cards[optionOneId].setAttribute('src', 'images/white.jpg')
       cards[optionTwoId].setAttribute('src', 'images/white.jpg')
+
       cardsWon.push(cardsChosen)
+
+      cards[optionOneId].removeEventListener('click', flipcard)
+      cards[optionTwoId].removeEventListener('click', flipcard)
     } else {
       cards[optionOneId].setAttribute('src', 'images/blueish.jpg')
       cards[optionTwoId].setAttribute('src', 'images/blueish.jpg')
+
+      cards[optionOneId].addEventListener('click', flipcard)
+      cards[optionTwoId].addEventListener('click', flipcard)
+
       alert('Sorry, try again')
     }
     cardsChosen = []
@@ -122,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cardsChosen.push(cardArray[cardId].name)
     cardsChosenId.push(cardId)
     this.setAttribute('src', cardArray[cardId].img)
+    this.removeEventListener('click', flipcard)
     if (cardsChosen.length === 2) {
       setTimeout(checkForMatch, 500)
     }
